@@ -43,14 +43,20 @@
 
     p.mobile-text {
       margin: 0;
-      font-size: 1rem;
+      font-size: 0.8rem;
       color: #222;
     }
 
-    a {
-      color: inherit;               /* garde la même couleur que le texte */
-      text-decoration: none;   /* reste souligné */
-      font-style: normal;           /* texte normal par défaut */
+     p.desktop-text a {
+      color: inherit;
+      text-decoration: none; 
+      font-style: normal;      
+    }
+
+    p.mobile-text a {
+      color: inherit;
+      text-decoration: none; 
+      font-style: italic;      
     }
 
     a:visited {

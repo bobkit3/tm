@@ -31,7 +31,7 @@
     }
 
     p {
-      font-style: italic;
+      font-style: normal;
     }
 
     p.caption {
@@ -42,8 +42,8 @@
 
     a {
       color: inherit;               /* garde la même couleur que le texte */
-      text-decoration: underline;   /* reste souligné */
-      font-style: italic;           /* texte normal par défaut */
+      text-decoration: none;   /* reste souligné */
+      font-style: normal;           /* texte normal par défaut */
     }
 
     a:visited {
@@ -51,15 +51,32 @@
     }
 
     a:hover {
-      font-style: normal;           /* italique au survol */
+      font-style: italic;           /* italique au survol */
+      text-decoration:underline;
       text-decoration-thickness: 2px; /* optionnel : rend le soulignement un peu plus épais */
+    }
+
+    /* Par défaut, on masque le texte mobile */
+    .mobile-text {
+      display: none;
+    }
+
+    /* Quand l’écran est petit (smartphone) */
+    @media screen and (max-width: 480px) {
+      .desktop-text {
+        display: none;   /* masque le texte PC */
+      }
+     .mobile-text {
+       display: block;  /* affiche le texte mobile */
+     }
     }
   </style>
 </head>
 <body>
   <div class="centered">
     <img class="animated" src="tino2.gif" alt="tino">
-    <p class="caption">tél : O6 35 11 44 21 — courriel : <a href="mailto:tino.mouroux@gmail.com">tino.mouroux@gmail.com</a></p>
+    <p class="caption desktop-text"><a href="tel:+33635114421">O6 35 11 44 21</a> — <a href="mailto:tino.mouroux@gmail.com">tino.mouroux@gmail.com</a></p>
+    <p class="caption mobile-text">tél : <a href="tel:+33635114421">O6 35 11 44 21</a> <br> courriel : <a href="mailto:tino.mouroux@gmail.com">tino.mouroux@gmail.com</a></p>
   </div>
 </body>
 </html>

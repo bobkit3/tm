@@ -64,6 +64,18 @@
       width: auto;
       vertical-align: middle;
       display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.05);
+    }
+
+    /* tiret visible uniquement sur ordi */
+    .separator {
+      font-weight: 300;
+      color: #444;
+      display: inline-block;
     }
 
     @media screen and (max-width: 480px) {
@@ -71,6 +83,7 @@
         flex-direction: column;
         gap: 0.5rem;
       }
+       .separator { display: inline-block; }
       a { font-style: italic; }
     }
   </style>
@@ -84,7 +97,7 @@
       <a id="t1-link" aria-label="Téléphone">
         <img src="1.png" alt="Téléphone" class="icon">
       </a>
-      <p>|</p>
+      <span class="separator">|</span>
       <a id="c2-link" aria-label="Adresse courriel">
         <img src="2.png" alt="Adresse courriel" class="icon">
       </a>
